@@ -32,7 +32,7 @@ create table user_buy_item_transaction
    total_count int,
    user_master_id varchar (16),
    pay varchar (30),
-   insert date datetime,
+   insert_date datetime,
    delete_date datetime
 );
 insert into item_info_transaction
@@ -52,7 +52,7 @@ insert into login_user_transaction
    login_id,
    login_pass,
    user_name
-);
+)
 values
 (
    "internous",

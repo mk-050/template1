@@ -10,7 +10,7 @@ import com.diworksdev.template.util.DBConnector;
 
 public class LoginDAO {
 
-	public LoginDTO getUserInfo(String loginUserId, String loginPassword) {
+	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		LoginDTO dto = new LoginDTO();

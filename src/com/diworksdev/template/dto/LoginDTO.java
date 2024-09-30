@@ -30,7 +30,7 @@ public class LoginDTO {
 		this.userName = userName;
 	}
 
-	public Boolean geLoginFlg() {
+	public Boolean getLoginFlg() {
 		return loginFlg;
 	}
 
