@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>buyItemComplete画面</title>
+<title>MyPage画面</title>
 
 <style type="text/css">
 body {
@@ -61,17 +61,48 @@ table {
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>BuyItemComplete</p>
+			<p>MyPage</p>
 		</div>
 		<div>
-			<p>購入手続きが完了しました。</p>
+			<s:if test="session.message==''">
+				<h3>ご購入情報は以下になります。</h3>
+				<table>
+					<tr>
+						<td>商品名</td>
+						<td><s:property value="session.buyItem_name" /></td>
+					</tr>
+					<tr>
+						<td>値段</td>
+						<td><s:property value="session.total_price" /> <span>円</span>
+						</td>
+					</tr>
+					<tr>
+						<td>購入個数</td>
+						<td><s:property value="session.total_count" /><span>個</span></td>
+					</tr>
+					<tr>
+						<td>支払方法</td>
+						<td><s:property value="session.total_payment" /><span>個</span></td>
+					</tr>
+				</table>
+				<s:form action="MyPageAction">
+					<input type="hidden" name="deleteFlg" value="1">
+					<submit value="削除" method="delete" />
+				</s:form>
+			</s:if>
+			<s:if test="session.message!=null">
+				<h3>
+					<s:property value="session.message" />
+				</h3>
+			</s:if>
 			<div>
-				<a href='<s:url action="MyPageAction"/>'>マイページ</a><span>から購入履歴の確認が可能です。</span>
+				<div>
+					<span>前画面に戻る場合は</span> <a href='<s:url action="HomeAction"/>'>ログアウト</a><span>をお願いいたします</span>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div id="footer">
-		<div id="pr"></div>
-	</div>
+		<div id="footer">
+			<div id="pr"></div>
+		</div>
 </body>
 </html>
