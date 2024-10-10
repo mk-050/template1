@@ -14,7 +14,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	public String deleteFlg;
 	private String result;
 
-	public String excecute() throws SQLException {
+	public String execute() throws SQLException {
 		MyPageDAO dao = new MyPageDAO();
 		MyPageDTO dto = new MyPageDTO();
 
@@ -26,8 +26,8 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 			session.put("buyItem_name", dto.getItemName());
 			session.put("total_price", dto.getTotalPrice());
-			session.put("total_Count", dto.getTotalCount());
-			session.put("total_count", dto.getPayment());
+			session.put("total_count", dto.getTotalCount());
+			session.put("total_payment", dto.getPayment());
 			session.put("message", "");
 
 		} else if (deleteFlg.equals("1")) {

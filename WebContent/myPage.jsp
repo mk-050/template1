@@ -82,22 +82,22 @@ table {
 					</tr>
 					<tr>
 						<td>支払方法</td>
-						<td><s:property value="session.total_payment" /><span>個</span></td>
+						<td><s:property value="session.total_payment" /></td>
 					</tr>
 				</table>
 				<s:form action="MyPageAction">
 					<input type="hidden" name="deleteFlg" value="1">
-					<submit value="削除" method="delete" />
+					<s:submit value="削除" method="delete" />
 				</s:form>
 			</s:if>
-			<s:if test="session.message!=null">
+			<s:if test="session.message != null">
 				<h3>
 					<s:property value="session.message" />
 				</h3>
 			</s:if>
 			<div>
 				<div>
-					<span>前画面に戻る場合は</span> <a href='<s:url action="HomeAction"/>'>ログアウト</a><span>をお願いいたします</span>
+					<span>前画面に戻る場合は</span> <a href='<s:url action="HomeAction"/>'>ログアウト</a><span>をお願いします</span>
 				</div>
 			</div>
 		</div>
